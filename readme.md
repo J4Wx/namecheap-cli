@@ -33,13 +33,13 @@ Config has two subcommands; get and set.
 You can check a config file entry using:
 
 ```
-# node index.js config get <field>
+# node index.js config:get <field>
 ```
 
 For example:
 
 ```
-# node index.js config get username
+# node index.js config:get username
 The current config setting for username is J4Wx
 ```
 
@@ -48,13 +48,13 @@ The current config setting for username is J4Wx
 You can update a config file entry using:
 
 ```
-# node index.js config set <field> <value>
+# node index.js config:set <field> <value>
 ```
 
 For example:
 
 ```
-# node index.js config set username J4Wx
+# node index.js config:set username J4Wx
 ```
 
 ### Domains
