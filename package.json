@@ -1,5 +1,5 @@
 {
-  "name": "_j4wx/namecheap-cli",
+  "name": "dns-namecheap-cli",
   "description": "## Introduction Once upon a time, I naively thought to myself:",
   "version": "0.0.2",
   "main": "index.js",
