@@ -7,6 +7,10 @@ Once upon a time, I naively thought to myself:
 
 To some extent - I agree with that old, more naive version of me. Only with the added twist of knowing that I'd be insane to try such a thing with the horrible API provided by Namecheap, and what appears to be a lack of intent to do anything about it. People have been asking for fairly simple improvements for many moons. It's "with the product team". Who knows, maybe they'll improve it soon. Will I have finished migrating to a new DNS by then? Probably.
 
+## Installation
+
+Install using `npm i -g dns-namecheap-cli`.
+
 ## Configuration
 
 The configuration is stored in a file called `.namecheap-cli` in the users home directory. The home directory is found using `require('os').homedir()`, so it should be fairly reliable.
@@ -14,8 +18,8 @@ The configuration is stored in a file called `.namecheap-cli` in the users home 
 A configuration file is created when you try to use a command that requires it. You can update the config manually by editing the json, or use the config commands.
 
 ```
-# node index.js config set username J4Wx
-# node index.js config set apiKey someApiKeyStringHere
+# namecheap-cli config set username J4Wx
+# namecheap-cli config set apiKey someApiKeyStringHere
 ```
 
 Should do the trick!
@@ -33,13 +37,13 @@ Config has two subcommands; get and set.
 You can check a config file entry using:
 
 ```
-# node index.js config:get <field>
+# namecheap-cli config:get <field>
 ```
 
 For example:
 
 ```
-# node index.js config:get username
+# namecheap-cli config:get username
 The current config setting for username is J4Wx
 ```
 
@@ -48,13 +52,13 @@ The current config setting for username is J4Wx
 You can update a config file entry using:
 
 ```
-# node index.js config:set <field> <value>
+# namecheap-cli config:set <field> <value>
 ```
 
 For example:
 
 ```
-# node index.js config:set username J4Wx
+# namecheap-cli config:set username J4Wx
 ```
 
 ### Domains
@@ -66,7 +70,7 @@ You can interact with your domains, well... list them ¯\\_(ツ)_/¯.
 This command will return a list of the domains on your account. Each page will return 20 results.
 
 ```
-node index.js domains:list <page = 1>
+# namecheap-cli domains:list <page = 1>
 ```
 
 ### Hosts
@@ -78,13 +82,13 @@ You can interact with your domains hosts! This is where it gets useful. At least
 This command will return a list of the hosts for a domain.
 
 ```
-node index.js domains:list <domain>
+# namecheap-cli domains:list <domain>
 ```
 
 For example:
 
 ```
-node index.js domains:list github.com
+# namecheap-cli domains:list github.com
 ```
 
 #### hosts:set
@@ -94,11 +98,11 @@ This command will update the specified host with the params you provide. Technic
 Don't ask why.
 
 ```
-# node index.js hosts:set <domain> <hostname> <type> <address> <ttl = 1800>
+# namecheap-cli hosts:set <domain> <hostname> <type> <address> <ttl = 1800>
 ```
 
 So to add add/update an entry at `demo.github.com` to point to `1.1.1.1` with type `A` and a TTL of `30000`, you would execute:
 
 ```
-# node index.js hosts:set github.com demo a 1.1.1.1 30000
+# namecheap-cli hosts:set github.com demo a 1.1.1.1 30000
 ```

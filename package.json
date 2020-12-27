@@ -1,7 +1,7 @@
 {
   "name": "dns-namecheap-cli",
   "description": "## Introduction Once upon a time, I naively thought to myself:",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "dependencies": {
     "commander": "^6.2.1",
@@ -10,6 +10,9 @@
     "table": "^6.0.4"
   },
   "devDependencies": {},
+  "bin": {
+    "namecheap-cli": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
