@@ -1,8 +1,33 @@
 {
+  "name": "namecheap-cli",
+  "description": "## Introduction Once upon a time, I naively thought to myself:",
+  "version": "0.0.2",
+  "main": "index.js",
   "dependencies": {
     "commander": "^6.2.1",
     "namecheap-api": "^1.0.5",
     "public-ip": "^4.0.3",
     "table": "^6.0.4"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J4Wx/namecheap-cli.git"
+  },
+  "keywords": [
+    "namecheap",
+    "cli",
+    "commander",
+    "dns",
+    "hosts"
+  ],
+  "author": "Jamie Wood <jamie@cool.studio>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/J4Wx/namecheap-cli/issues"
+  },
+  "homepage": "https://github.com/J4Wx/namecheap-cli#readme"
 }

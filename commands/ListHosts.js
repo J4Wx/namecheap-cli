@@ -18,10 +18,16 @@ const handler = async (domain, page = 1) => {
     }).then(({ response, ...result }) => {
         response = response[0].DomainDNSGetHostsResult[0];
 
-        const data = response.host.map((v, i) => {
-            v = v['$'];
-            return [i + 1, v.HostId, v.Name, v.Type, v.Address, v.TTL];
-        });
+        var data = [];
+        if (response.host) {
+            data = response.host.map((v, i) => {
+                v = v['$'];
+                return [i + 1, v.HostId, v.Name, v.Type, v.Address, v.TTL];
+            });
+        } else {
+            console.log('No hosts exist for this domain.');
+            return;
+        }
 
         const output = [['Index', 'ID', 'Name', 'Type', 'Address', 'TTL']].concat(data);
 

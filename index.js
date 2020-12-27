@@ -7,7 +7,7 @@ const SetHost = require('./commands/SetHost');
 const Program = new Command();
 
 Program
-    .version('0.0.1')
+    .version('0.0.2')
     .description('An application for interaction with the Namecheap API')
     .addCommand(Config.get())
     .addCommand(Config.set())

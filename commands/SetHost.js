@@ -21,11 +21,13 @@ const handler = async (domain, name, type, address, TTL) => {
         const domains = [];
         const domainData = {};
 
-        response.host.map((v, i) => {
-            v = v['$'];
-            domains.push(v.Name);
-            domainData[v.Name] = [v.Name, v.Type, v.Address, v.TTL];
-        });
+        if (response.host) {
+            response.host.map((v, i) => {
+                v = v['$'];
+                domains.push(v.Name);
+                domainData[v.Name] = [v.Name, v.Type, v.Address, v.TTL];
+            });
+        }
 
         if (domains.indexOf(name) === -1) {
             domains.push(name);
@@ -52,7 +54,7 @@ const handler = async (domain, name, type, address, TTL) => {
             console.log(`Updated Hosts for ${name}.`);
         }).catch(e => {
             console.error(e);
-        })
+        });
     }).catch(e => {
         console.error(e);
     })
