@@ -9,7 +9,8 @@ const Program = new Command();
 Program
     .version('0.0.1')
     .description('An application for interaction with the Namecheap API')
-    .addCommand(Config())
+    .addCommand(Config.get())
+    .addCommand(Config.set())
     .addCommand(ListDomains())
     .addCommand(ListHosts())
     .addCommand(SetHost());
