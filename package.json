@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "commander": "^6.2.1",
+    "namecheap-api": "^1.0.5",
+    "public-ip": "^4.0.3",
+    "table": "^6.0.4"
+  }
+}
