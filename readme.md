@@ -62,3 +62,43 @@ For example:
 You can interact with your domains, well... list them ¯\\_(ツ)_/¯.
 
 #### domains:list
+
+This command will return a list of the domains on your account. Each page will return 20 results.
+
+```
+node index.js domains:list <page = 1>
+```
+
+### Hosts
+
+You can interact with your domains hosts! This is where it gets useful. At least a little bit.
+
+#### hosts:list
+
+This command will return a list of the hosts for a domain.
+
+```
+node index.js domains:list <domain>
+```
+
+For example:
+
+```
+node index.js domains:list github.com
+```
+
+#### hosts:set
+
+This command will update the specified host with the params you provide. Technically it will actually update all of your hosts thanks to the fact the setHosts method deletes and adds every single host. A list of your current hosts is retrieved (and updated if required) and sent back. So your hosts shouldn't change.
+
+Don't ask why.
+
+```
+# node index.js hosts:set <domain> <hostname> <type> <address> <ttl = 1800>
+```
+
+So to add add/update an entry at `demo.github.com` to point to `1.1.1.1` with type `A` and a TTL of `30000`, you would execute:
+
+```
+# node index.js hosts:set github.com demo a 1.1.1.1 30000
+```
